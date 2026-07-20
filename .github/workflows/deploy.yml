@@ -1,0 +1,13 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify Build
+        run: |
+          curl -X POST "https://api.netlify.com/build_hooks/6a5da36a1967b60bc3b10faf"
